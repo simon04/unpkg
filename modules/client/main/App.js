@@ -10,8 +10,6 @@ import { formatNumber, formatPercent } from '../utils/format.js';
 import { fontSans, fontMono } from '../utils/style.js';
 
 import { TwitterIcon, GitHubIcon } from './Icons.js';
-import CloudflareLogo from './images/CloudflareLogo.png';
-import GoogleCloudLogo from './images/GoogleCloudLogo.png';
 
 const buildId = process.env.BUILD_ID;
 
@@ -153,7 +151,7 @@ export default function App() {
                 padding: '5px 0'
               }}
             >
-              unpkg.com/:package@:version/:file
+              unpkg.toolforge.org/:package@:version/:file
             </div>
 
             {hasStats && <Stats data={stats} />}
@@ -168,12 +166,12 @@ export default function App() {
           <ul>
             <li>
               <Link href="/react@16.7.0/umd/react.production.min.js">
-                unpkg.com/react@16.7.0/umd/react.production.min.js
+                unpkg.toolforge.org/react@16.7.0/umd/react.production.min.js
               </Link>
             </li>
             <li>
               <Link href="/react-dom@16.7.0/umd/react-dom.production.min.js">
-                unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js
+                unpkg.toolforge.org/react-dom@16.7.0/umd/react-dom.production.min.js
               </Link>
             </li>
           </ul>
@@ -189,12 +187,12 @@ export default function App() {
           <ul>
             <li>
               <Link href="/react@^16/umd/react.production.min.js">
-                unpkg.com/react@^16/umd/react.production.min.js
+                unpkg.toolforge.org/react@^16/umd/react.production.min.js
               </Link>
             </li>
             <li>
               <Link href="/react/umd/react.production.min.js">
-                unpkg.com/react/umd/react.production.min.js
+                unpkg.toolforge.org/react/umd/react.production.min.js
               </Link>
             </li>
           </ul>
@@ -207,10 +205,10 @@ export default function App() {
 
           <ul>
             <li>
-              <Link href="/jquery">unpkg.com/jquery</Link>
+              <Link href="/jquery">unpkg.toolforge.org/jquery</Link>
             </li>
             <li>
-              <Link href="/three">unpkg.com/three</Link>
+              <Link href="/three">unpkg.toolforge.org/three</Link>
             </li>
           </ul>
 
@@ -221,10 +219,10 @@ export default function App() {
 
           <ul>
             <li>
-              <Link href="/react/">unpkg.com/react/</Link>
+              <Link href="/react/">unpkg.toolforge.org/react/</Link>
             </li>
             <li>
-              <Link href="/react-router/">unpkg.com/react-router/</Link>
+              <Link href="/react-router/">unpkg.toolforge.org/react-router/</Link>
             </li>
           </ul>
 
@@ -339,17 +337,8 @@ export default function App() {
           </p>
 
           <p>
-            The unpkg CDN is powered by{' '}
-            <Link href="https://www.cloudflare.com">Cloudflare</Link>, one of
-            the world&apos;s largest and fastest cloud network platforms.{' '}
-            {hasStats && (
-              <span>
-                In the past month, Cloudflare served over{' '}
-                <strong>{formatBytes(stats.totals.bandwidth.all)}</strong> to{' '}
-                <strong>{formatNumber(stats.totals.uniques.all)}</strong> unique
-                unpkg users all over the world.
-              </span>
-            )}
+            This unpkg CDN is powered by{' '}
+            <Link href="https://toolforge.org/">Wikimedia Toolforge</Link>.
           </p>
 
           <div
@@ -360,37 +349,11 @@ export default function App() {
             }}
           >
             <AboutLogo>
-              <a href="https://www.cloudflare.com">
+              <a href="https://toolforge.org/">
                 <AboutLogoImage
-                  alt="Cloudflare"
-                  src={CloudflareLogo}
+                  alt="Wikimedia Toolforge"
+                  src="https://tools-static.wmflabs.org/toolforge/logos/logo.svg"
                   height="100"
-                />
-              </a>
-            </AboutLogo>
-          </div>
-
-          <p>
-            The origin servers run on world-class auto-scaling infrastructure
-            provided by{' '}
-            <Link href="https://cloud.google.com/">Google Cloud</Link> which
-            dynamically adjusts the number of available servers to meet the
-            current demand for maximum efficiency and uptime.
-          </p>
-
-          <div
-            css={{
-              margin: '4em 0 0',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            <AboutLogo>
-              <a href="https://cloud.google.com">
-                <AboutLogoImage
-                  alt="Google Cloud"
-                  src={GoogleCloudLogo}
-                  width="320"
                 />
               </a>
             </AboutLogo>
